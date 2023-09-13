@@ -1,11 +1,11 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:proyecto_killer/main.dart';
 import 'package:proyecto_killer/user/User.dart';
 import 'package:proyecto_killer/user/userLogIn/userLogInPage.dart';
 import 'package:sizer/sizer.dart';
+import 'package:http/http.dart';
 
 class UserRegister extends StatefulWidget {
   const UserRegister({super.key});
@@ -197,7 +197,7 @@ class _UserRegisterState extends State<UserRegister> {
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       User user = User(
-                          id: "1",
+                          id: 1,
                           nombre: textControllerNombre.text,
                           correo: textControllerCorreo.text,
                           contrasena: textControllerContrasena.text,

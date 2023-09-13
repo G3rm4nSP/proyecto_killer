@@ -1,8 +1,12 @@
+import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:proyecto_killer/main.dart';
 import 'package:proyecto_killer/menu/menuPage.dart';
+import 'package:proyecto_killer/user/User.dart';
 import 'package:proyecto_killer/user/userRegister/userRegisterPage.dart';
 import 'package:sizer/sizer.dart';
+import 'package:http/http.dart' as http;
 
 class UserLogIn extends StatefulWidget {
   const UserLogIn({super.key});
@@ -18,6 +22,46 @@ class _UserLogInState extends State<UserLogIn> {
   final textControllerContrasena = TextEditingController();
 
   bool viewPassword = true;
+  List<User> _users = <User>[];
+
+  Future<List<User>> usersRead() async {
+    var url = Uri.parse(
+        'https://raw.githubusercontent.com/G3rm4nSP/jsonsExamples/main/Users.json');
+    var response = await http.get(url);
+
+    var users = <User>[];
+
+    if (response.statusCode == 200) {
+      var usersJson = json.decode(response.body);
+      for (var userJson in usersJson) {
+        users.add(User.fromJson(userJson));
+      }
+    }
+    return users;
+  }
+
+  @override
+  void initState() {
+    usersRead().then((value) {
+      _users.addAll(value);
+    });
+    super.initState();
+  }
+
+  checkLog(String user, String password) async {
+    for (var i = 0; i < _users.length; i++) {
+      if (kDebugMode) {
+        print('pruebas: $_users ');
+      }
+
+      if (_users[i].correo == user || _users[i].nombre == user) {
+        if (_users[i].contrasena == password) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,12 +138,34 @@ class _UserLogInState extends State<UserLogIn> {
                       ))),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      //saltar a login page
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const MenuPage()),
-                      );
+                      bool validez = checkLog(textControllerUsuario.text,
+                          textControllerContrasena.text);
+                      if (validez) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MenuPage()),
+                        );
+                      } else {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Error'),
+                                content: Text(
+                                    'El usuario o la contraseña son incorrectos'),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        textControllerContrasena.clear();
+
+                                        Navigator.of(context).pop();
+                                      },
+                                      child: Text('Aceptar'))
+                                ],
+                              );
+                            });
+                      }
                       print('pruebas: login');
                     }
                   },

@@ -1,13 +1,13 @@
 class User {
-  String id;
-  String nombre;
-  String correo;
-  String contrasena;
-  String foto;
-  String? edad;
-  String? genero;
-  String? telefono;
-  String? tipoUsuario;
+  late int id;
+  late String nombre;
+  late String correo;
+  late String contrasena;
+  late String foto;
+  late int? edad;
+  late String? genero;
+  late int? telefono;
+  late String? tipoUsuario;
 
   User(
       {required this.id,
@@ -19,6 +19,18 @@ class User {
       this.genero,
       this.telefono,
       this.tipoUsuario});
+
+  User.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    nombre = json['name'];
+    correo = json['email'];
+    contrasena = json['password'];
+    foto = json['image'];
+    edad = json['age'];
+    genero = json['gender'];
+    telefono = json['phone'];
+    tipoUsuario = json['userType'];
+  }
 
   @override
   String toString() {
