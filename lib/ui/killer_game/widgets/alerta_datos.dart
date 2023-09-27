@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
 
 class AlertaConfirmarDatos extends StatelessWidget {
   const AlertaConfirmarDatos({

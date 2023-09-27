@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
 
 class AlertaObjetivo extends StatelessWidget {
   const AlertaObjetivo({

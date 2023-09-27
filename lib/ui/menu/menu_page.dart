@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_killer/main.dart';
-import 'package:proyecto_killer/playersRegister/registerPlayersPage.dart';
-import 'package:proyecto_killer/user/userLogIn/userLogInPage.dart';
-import 'package:proyecto_killer/user/userRegister/userRegisterPage.dart';
+import 'package:proyecto_killer/ui/killer_game/register_players_page.dart';
+import 'package:proyecto_killer/ui/user_logIn/user_logIn_page.dart';
+import 'package:proyecto_killer/ui/user_register/user_register_page.dart';
 import 'package:sizer/sizer.dart';
 
 class MenuPage extends StatefulWidget {

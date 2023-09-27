@@ -2,10 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:proyecto_killer/main.dart';
-import 'package:proyecto_killer/user/User.dart';
-import 'package:proyecto_killer/user/userLogIn/userLogInPage.dart';
+import 'package:proyecto_killer/domain/entities/user.dart';
+import 'package:proyecto_killer/ui/user_register/widgets/button_register.dart';
 import 'package:sizer/sizer.dart';
-import 'package:http/http.dart';
 
 class UserRegister extends StatefulWidget {
   const UserRegister({super.key});
@@ -80,7 +79,7 @@ class _UserRegisterState extends State<UserRegister> {
                 //Correo
                 TextFormField(
                   controller: textControllerCorreo,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: 'Correo',
                   ),
                   validator: (value) {
@@ -179,46 +178,10 @@ class _UserRegisterState extends State<UserRegister> {
                     return null;
                   },
                 ),
-                SizedBox(height: 5.h),
 
                 //Confirmar
-                ElevatedButton(
-                  style: ButtonStyle(
-                      maximumSize:
-                          MaterialStateProperty.all<Size>(Size(100.w, 8.h)),
-                      minimumSize:
-                          MaterialStateProperty.all<Size>(Size(70.w, 7.h)),
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                          const Color.fromARGB(255, 129, 195, 224)),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ))),
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      User user = User(
-                          id: 1,
-                          nombre: textControllerNombre.text,
-                          correo: textControllerCorreo.text,
-                          contrasena: textControllerContrasena.text,
-                          foto: _imageFile.toString());
-                      users.add(user);
-                      //saltar a login page
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const UserLogIn()),
-                      );
-                      print('pruebas: $user');
-                    }
-                  },
-                  child: Text('Registrarse',
-                      style: TextStyle(
-                        color: Colors.white, //negrita
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15.sp,
-                      )),
-                ),
+                SizedBox(height: 5.h),
+                buttonRegiser(context),
               ],
             ),
           ),

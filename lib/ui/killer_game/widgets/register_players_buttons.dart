@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
-import 'package:proyecto_killer/alertas/alertaDatos.dart';
-import 'package:proyecto_killer/alertas/alertaErrores.dart';
-import 'package:proyecto_killer/alertas/alertaRegistro.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
+
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_datos.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_errores.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_registro.dart';
 
 class BotonLimiarDatos extends StatelessWidget {
   const BotonLimiarDatos({

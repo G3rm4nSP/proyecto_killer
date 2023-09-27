@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
-import 'package:proyecto_killer/playersDeal/dealPlayersButtons.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/deal_players_buttons.dart';
 
 class DealPage extends StatefulWidget {
   const DealPage({

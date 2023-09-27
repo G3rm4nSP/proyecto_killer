@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
-import 'package:proyecto_killer/playersDeal/dealPlayersPage.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
+import 'package:proyecto_killer/ui/killer_game/deal_players_page.dart';
 
 class AlertaFinDeRegistro extends StatelessWidget {
   const AlertaFinDeRegistro({

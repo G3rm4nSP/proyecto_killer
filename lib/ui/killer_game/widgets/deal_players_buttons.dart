@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/Jugador.dart';
-import 'package:proyecto_killer/alertas/alertaErrores.dart';
-import 'package:proyecto_killer/alertas/alertaMuerte.dart';
-import 'package:proyecto_killer/alertas/alertaObjetivo.dart';
+import 'package:proyecto_killer/domain/entities/Jugador.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_errores.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_muerte.dart';
+import 'package:proyecto_killer/ui/killer_game/widgets/alerta_objetivo.dart';
 
 class BotonRetroceder extends StatelessWidget {
   const BotonRetroceder({
