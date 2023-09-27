@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/domain/entities/Jugador.dart';
+import 'package:proyecto_killer/domain/entities/jugador.dart';
 import 'package:proyecto_killer/ui/killer_game/widgets/alerta_errores.dart';
 import 'package:proyecto_killer/ui/killer_game/widgets/alerta_muerte.dart';
 import 'package:proyecto_killer/ui/killer_game/widgets/alerta_objetivo.dart';
@@ -84,7 +84,7 @@ class BotonConfirmarMuerte extends StatelessWidget {
                   ),
                   actions: [
                     //CANCELAR
-                    BotonCancelar(
+                    botonCancelar(
                         textControllerAsesino, textControllerArma, context),
                     //COMPROBAR MUERTE
                     BotonComprobarMuerte(
@@ -103,7 +103,7 @@ class BotonConfirmarMuerte extends StatelessWidget {
         child: const Text("Me han matado"));
   }
 
-  TextButton BotonCancelar(TextEditingController textControllerAsesino,
+  TextButton botonCancelar(TextEditingController textControllerAsesino,
       TextEditingController textControllerArma, BuildContext context) {
     return TextButton(
         onPressed: () {

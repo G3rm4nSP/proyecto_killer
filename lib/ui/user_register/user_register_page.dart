@@ -42,7 +42,7 @@ class _UserRegisterState extends State<UserRegister> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.all(10.0),
+        minimum: const EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: Form(
             key: _formKey,

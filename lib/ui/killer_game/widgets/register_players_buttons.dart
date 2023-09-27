@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_killer/domain/entities/Jugador.dart';
+import 'package:proyecto_killer/domain/entities/jugador.dart';
 
 import 'package:proyecto_killer/ui/killer_game/widgets/alerta_datos.dart';
 import 'package:proyecto_killer/ui/killer_game/widgets/alerta_errores.dart';
@@ -81,7 +81,7 @@ class BotonGuardado extends StatelessWidget {
           String objeto1 = textControllerObjeto1.text;
           String objeto2 = textControllerObjeto2.text;
           String objeto3 = textControllerObjeto3.text;
-          print("pruebas: ${textControllerNombre.text}");
+          //print("pruebas: ${textControllerNombre.text}");
           if (nombre == "" || objeto1 == "" || objeto2 == "" || objeto3 == "") {
             showDialog(
                 context: context,

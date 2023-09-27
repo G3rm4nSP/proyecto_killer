@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:proyecto_killer/ui/killer_game/widgets/register_players_buttons.dart';
 
-import '../../domain/entities/Jugador.dart';
+import '../../domain/entities/jugador.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

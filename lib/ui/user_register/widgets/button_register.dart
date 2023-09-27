@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_killer/styles/button_style.dart';
-import 'package:proyecto_killer/ui/user_logIn/user_logIn_page.dart';
+import 'package:proyecto_killer/ui/user_logIn/user_log_in_page.dart';
 
 ElevatedButton buttonRegiser(BuildContext context) {
   return ElevatedButton(
