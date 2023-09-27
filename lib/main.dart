@@ -6,7 +6,7 @@ import 'package:sizer/sizer.dart';
 void main() {
   runApp(
     const GlobalData(
-      desarrollador: true,
+      desarrollador: false,
       child: MyApp(),
     ),
   );
